@@ -20,6 +20,7 @@ jobs:
   strategy:
     matrix:
       Mito_27:
+        python.version: '2.7'
         tox.env: py27-mode_mitogen
       Mito_311:
         python.version: '3.11'
@@ -27,16 +28,20 @@ jobs:
 
       # TODO: test python3, python3 tests are broken
       Loc_27_210:
+        python.version: '2.7'
         tox.env: py27-mode_localhost-ansible2.10
       Loc_27_4:
+        python.version: '2.7'
         tox.env: py27-mode_localhost-ansible4
 
       # NOTE: this hangs when ran in Ubuntu 18.04
       Van_27_210:
+        python.version: '2.7'
         tox.env: py27-mode_localhost-ansible2.10
         STRATEGY: linear
         ANSIBLE_SKIP_TAGS: resource_intensive
       Van_27_4:
+        python.version: '2.7'
         tox.env: py27-mode_localhost-ansible4
         STRATEGY: linear
         ANSIBLE_SKIP_TAGS: resource_intensive

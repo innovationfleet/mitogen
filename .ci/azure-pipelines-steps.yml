@@ -24,7 +24,7 @@ steps:
   displayName: Install build deps
   condition: and(eq(variables['python.version'], ''), eq(variables['Agent.OS'], 'Linux'))
 
-- script: python -mpip install "tox<4.0"
+- script: python -mpip install "setuptools" "tox<4.0"
   displayName: Install tooling
 
 - script: python -mtox -e "$(tox.env)"
